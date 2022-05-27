@@ -71,8 +71,8 @@ def showMARCRT(marcData):
                 thisMARC = MARC(i)
                 thisTripId = thisMARC.tripId
                 print(thisTripId)
-                #thisTripName = marcTrips[f'{thisTripId}'].trip_headsign
-                #print(thisTripName)
+                thisTripName = marcTrips[f'{thisTripId}'].trip_headsign
+                print(thisTripName)
                 print(f"\t{count}. {thisMARC} {thisMARC.currentStatus}")
                 count += 1
             except:
