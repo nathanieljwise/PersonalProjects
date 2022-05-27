@@ -1,0 +1,101 @@
+stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,stop_timezone,wheelchair_boarding
+7625,7625,Glen Burnie (Cromwell) (Northbound),,39.172429,-76.633257,,,0,s7001,,0
+7626,7626,Ferndale (Northbound),,39.18406,-76.640283,,,0,s7002,,0
+7627,7627,BWI Airport (Northbound),,39.183154,-76.670089,,,0,s7003,,0
+7628,7628,BWI Business District (Northbound),,39.191367,-76.672703,,,0,s7004,,0
+7630,7630,Linthicum (Northbound),,39.202632,-76.655102,,,0,s7005,,0
+7631,7631,North Linthicum (Northbound),,39.214631,-76.645797,,,0,s7006,,0
+7632,7632,Nursery Road (Northbound),,39.221882,-76.641196,,,0,s7007,,0
+7634,7634,Baltimore Highlands (Northbound),,39.235445,-76.632728,,,0,s7008,,0
+7635,7635,Patapsco (Northbound),,39.242316,-76.629792,,,0,s7009,,0
+7637,7637,Cherry Hill (Northbound),,39.256368,-76.634827,,,0,s7010,,0
+7638,7638,Westport (Northbound),,39.262129,-76.631889,,,0,s7011,,0
+7639,7639,Hamburg Street (Northbound),,39.279295,-76.61968,,,0,s7012,,0
+7640,7640,Camden Station / Camden Yards (Northbound),,39.283704,-76.619407,,,0,s7013,,0
+7641,7641,Convention Center (Northbound),,39.28616,-76.619353,,,0,s7014,,0
+7642,7642,Baltimore Arena (University Center) (Northbound),,39.289084,-76.619428,,,0,s7015,,0
+7643,7643,Lexington Market (Northbound),,39.292568,-76.619573,,,0,s7016,,0
+7644,7644,Mt. Vernon (Centre Street) (Northbound),,39.297178,-76.619931,,,0,s7017,,0
+7645,7645,Cultural Center / State Center (Northbound),,39.304092,-76.620446,,,0,s7018,,0
+7646,7646,Mt. Royal / MICA (Northbound),,39.307747,-76.619858,,,0,s7019,,0
+7647,7647,Penn Station (Northbound),,39.307625,-76.61574,,,0,s7020,,0
+7648,7648,North Avenue (Northbound),,39.312245,-76.622728,,,0,s7021,,0
+7649,7649,MTA Light Rail Division,,39.315396,-76.625883,,,0,,America/New_York,0
+7650,7650,Woodberry (Northbound),,39.33155,-76.643475,,,0,s7022,,0
+7651,7651,Cold Spring Lane (Northbound),,39.344458,-76.647937,,,0,s7023,,0
+7652,7652,Mt. Washington (Northbound),,39.368792,-76.652378,,,0,s7024,,0
+7654,7654,Falls Road (Northbound),,39.376821,-76.649323,,,0,s7025,,0
+7655,7655,Lutherville (Northbound),,39.429317,-76.627162,,,0,s7026,,0
+7656,7656,Timonium (Northbound),,39.43422,-76.628205,,,0,s7027,,0
+7657,7657,Fairgrounds (Northbound),,39.448906,-76.635058,,,0,s7028,,0
+7658,7658,Warren Road (Northbound),,39.475979,-76.654196,,,0,s7029,,0
+7659,7659,Gilroy Road (Northbound),,39.482506,-76.661593,,,0,s7030,,0
+7660,7660,McCormick Road (Northbound),,39.489626,-76.658493,,,0,s7031,,0
+7661,7661,Pepper Road (Northbound),,39.492167,-76.655674,,,0,s7032,,0
+7662,7662,Hunt Valley (Northbound),,39.496228,-76.653756,,,0,s7033,,0
+7663,7663,Hunt Valley (Southbound),,39.496293,-76.654762,,,0,s7033,,0
+7664,7664,Pepper Road (Southbound),,39.492102,-76.656692,,,0,s7032,,0
+7665,7665,McCormick Road (Southbound),,39.489509,-76.6595,,,0,s7031,,0
+7666,7666,Gilroy Road (Southbound),,39.481891,-76.661846,,,0,s7030,,0
+7667,7667,Warren Road (Southbound),,39.47583,-76.653297,,,0,s7029,,0
+7668,7668,Fairgrounds (Southbound),,39.448212,-76.634811,,,0,s7028,,0
+7669,7669,Timonium (Southbound),,39.43351,-76.628162,,,0,s7027,,0
+7670,7670,Lutherville (Southbound),,39.428603,-76.62712,,,0,s7026,,0
+7671,7671,Falls Road (Southbound),,39.376458,-76.650117,,,0,s7025,,0
+7673,7673,Mt. Washington (Southbound),,39.368151,-76.651973,,,0,s7024,,0
+7674,7674,Cold Spring Lane (Southbound),,39.34375,-76.647865,,,0,s7023,,0
+7675,7675,Woodberry (Southbound),,39.330858,-76.643359,,,0,s7022,,0
+7676,7676,North Avenue (Southbound),,39.311524,-76.62244,,,0,s7021,,0
+7677,7677,Penn Station (Southbound),,39.307992,-76.616622,,,0,s7020,,0
+7678,7678,Mt. Royal / MICA (Southbound),,39.307032,-76.619913,,,0,s7019,,0
+7679,7679,Cultural Center / State Center (Southbound),,39.303329,-76.620455,,,0,s7018,,0
+7680,7680,Mt. Vernon (Centre Street) (Southbound),,39.29651,-76.619994,,,0,s7017,,0
+7681,7681,Lexington Market (Southbound),,39.291867,-76.619667,,,0,s7016,,0
+7682,7682,Baltimore Arena (University Center) (Southbound),,39.288427,-76.619488,,,0,s7015,,0
+7683,7683,Convention Center (Southbound),,39.285426,-76.619422,,,0,s7014,,0
+7684,7684,Camden Station / Camden Yards (Southbound),,39.282793,-76.619483,,,0,s7013,,0
+7685,7685,Hamburg Street (Southbound),,39.278621,-76.620139,,,0,s7012,,0
+7686,7686,Westport (Southbound),,39.261529,-76.632378,,,0,s7011,,0
+7687,7687,Cherry Hill (Southbound),,39.255666,-76.635037,,,0,s7010,,0
+7689,7689,Patapsco (Southbound),,39.24167,-76.630183,,,0,s7009,,0
+7690,7690,Baltimore Highlands (Southbound),,39.234785,-76.633125,,,0,s7008,,0
+7692,7692,Nursery Road (Southbound),,39.221257,-76.641629,,,0,s7007,,0
+7693,7693,North Linthicum (Southbound),,39.214067,-76.646363,,,0,s7006,,0
+7694,7694,Linthicum (Southbound),,39.20206,-76.655589,,,0,s7005,,0
+7696,7696,BWI Business District (Southbound),,39.191484,-76.673709,,,0,s7004,,0
+7697,7697,BWI Airport (Southbound),,39.182498,-76.66955,,,0,s7003,,0
+7698,7698,Ferndale (Southbound),,39.183275,-76.640044,,,0,s7002,,0
+7699,7699,Glen Burnie (Cromwell) (Southbound),,39.171691,-76.632823,,,0,s7001,,0
+s7001,s7001,Glen Burnie (Cromwell),,39.172091,-76.633078,,,1,,America/New_York,1
+s7002,s7002,Ferndale,,39.183652,-76.640158,,,1,,America/New_York,1
+s7003,s7003,BWI Airport,,39.182827,-76.669822,,,1,,America/New_York,1
+s7004,s7004,BWI Business District,,39.191429,-76.673209,,,1,,America/New_York,1
+s7005,s7005,Linthicum,,39.202331,-76.655355,,,1,,America/New_York,1
+s7006,s7006,North Linthicum,,39.214343,-76.646081,,,1,,America/New_York,1
+s7007,s7007,Nursery Road,,39.221571,-76.641401,,,1,,America/New_York,1
+s7008,s7008,Baltimore Highlands,,39.235123,-76.632925,,,1,,America/New_York,1
+s7009,s7009,Patapsco,,39.241996,-76.629976,,,1,,America/New_York,1
+s7010,s7010,Cherry Hill,,39.256017,-76.634936,,,1,,America/New_York,1
+s7011,s7011,Westport,,39.261829,-76.632128,,,1,,America/New_York,1
+s7012,s7012,Hamburg Street,,39.278947,-76.619906,,,1,,America/New_York,1
+s7013,s7013,Camden Station / Camden Yards,,39.283139,-76.619449,,,1,,America/New_York,1
+s7014,s7014,Convention Center,,39.285789,-76.619393,,,1,,America/New_York,1
+s7015,s7015,Baltimore Arena (University Center),,39.28882,-76.619464,,,1,,America/New_York,1
+s7016,s7016,Lexington Market,,39.292254,-76.619622,,,1,,America/New_York,1
+s7017,s7017,Mt. Vernon (Centre Street),,39.296818,-76.619958,,,1,,America/New_York,1
+s7018,s7018,Cultural Center / State Center,,39.303681,-76.620452,,,1,,America/New_York,1
+s7019,s7019,Mt. Royal / MICA,,39.307498,-76.619891,,,1,,America/New_York,1
+s7020,s7020,Penn Station,,39.307824,-76.61617,,,1,,America/New_York,1
+s7021,s7021,North Avenue,,39.31188,-76.62259,,,1,,America/New_York,1
+s7022,s7022,Woodberry,,39.331199,-76.64342,,,1,,America/New_York,1
+s7023,s7023,Cold Spring Lane,,39.344098,-76.647902,,,1,,America/New_York,1
+s7024,s7024,Mt. Washington,,39.368462,-76.652176,,,1,,America/New_York,1
+s7025,s7025,Falls Road,,39.37664,-76.649729,,,1,,America/New_York,1
+s7026,s7026,Lutherville,,39.428959,-76.627143,,,1,,America/New_York,1
+s7027,s7027,Timonium,,39.433868,-76.62818,,,1,,America/New_York,1
+s7028,s7028,Fairgrounds,,39.448555,-76.634928,,,1,,America/New_York,1
+s7029,s7029,Warren Road,,39.475904,-76.653755,,,1,,America/New_York,1
+s7030,s7030,Gilroy Road,,39.482161,-76.66173,,,1,,America/New_York,1
+s7031,s7031,McCormick Road,,39.489549,-76.65894,,,1,,America/New_York,1
+s7032,s7032,Pepper Road,,39.492108,-76.656272,,,1,,America/New_York,1
+s7033,s7033,Hunt Valley,,39.496287,-76.654289,,,1,,America/New_York,1
