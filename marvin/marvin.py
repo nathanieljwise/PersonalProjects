@@ -119,7 +119,7 @@ async def on_message(message):
         channel = client.get_channel(CHANNELS["SKYNET"])
         await channel.send(message.author.mention)
         await channel.send("See my source code at:"
-                           "\nhttps://github.com/thanksforthefish/bots/blob/main/discord/marvin/marvin.py")
+                           "\nhttps://github.com/nathanieljwise/PersonalProjects/blob/main/marvin/marvin.py")
 
 
 client.run(os.getenv("TOKEN"))
