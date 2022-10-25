@@ -97,13 +97,14 @@ def printArrivals(trainList):
 
 def main():
     displayStations()
+    NUM_CTA_STATIONS = 142
     userStation = int(input("\nChoose a station (-1 to quit): "))
     print()
 
     while userStation > -1:
         if userStation == 0:  # Hidden command
             displayStations()
-        elif userStation > 142:  # 142 stations in CTA system
+        elif userStation > NUM_CTA_STATIONS:  # 142 stations in CTA system
             print("Please enter a valid station number.")
         else:
             theseTrains = getData(userStation-1)
