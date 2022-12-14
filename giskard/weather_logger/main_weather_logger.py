@@ -16,21 +16,25 @@ locations = {"dundalk": {"lat": 39.2649, "long": -76.5324},
 
 starttime = time.time()
 while True:
-    dundalk = LocationDataPoints(locations["dundalk"]["lat"], locations["dundalk"]["long"], OPEN_WEATHER_APP_ID, city="dundalk")
-    towanda = LocationDataPoints(locations["towanda"]["lat"], locations["towanda"]["long"], OPEN_WEATHER_APP_ID, city="towanda")
-    santa_maria = LocationDataPoints(locations["santa_maria"]["lat"], locations["santa_maria"]["long"], OPEN_WEATHER_APP_ID, city="santa_maria")
-    lewisburg = LocationDataPoints(locations["lewisburg"]["lat"], locations["lewisburg"]["long"], OPEN_WEATHER_APP_ID, city="lewisburg")
-    hixson = LocationDataPoints(locations["hixson"]["lat"], locations["hixson"]["long"], OPEN_WEATHER_APP_ID, city="hixson")
-    greenville = LocationDataPoints(locations["greenville"]["lat"], locations["greenville"]["long"], OPEN_WEATHER_APP_ID, city="greenville")
-    new_market = LocationDataPoints(locations["new_market"]["lat"], locations["new_market"]["long"], OPEN_WEATHER_APP_ID, city="new_market")
-    columbia = LocationDataPoints(locations["columbia"]["lat"], locations["columbia"]["long"], OPEN_WEATHER_APP_ID, city="columbia")
+    current_time = time.localtime()
+    if not (current_time.tm_min % 10):
+        try:
+            dundalk = LocationDataPoints(locations["dundalk"]["lat"], locations["dundalk"]["long"], OPEN_WEATHER_APP_ID, city="dundalk")
+            towanda = LocationDataPoints(locations["towanda"]["lat"], locations["towanda"]["long"], OPEN_WEATHER_APP_ID, city="towanda")
+            santa_maria = LocationDataPoints(locations["santa_maria"]["lat"], locations["santa_maria"]["long"], OPEN_WEATHER_APP_ID, city="santa_maria")
+            lewisburg = LocationDataPoints(locations["lewisburg"]["lat"], locations["lewisburg"]["long"], OPEN_WEATHER_APP_ID, city="lewisburg")
+            hixson = LocationDataPoints(locations["hixson"]["lat"], locations["hixson"]["long"], OPEN_WEATHER_APP_ID, city="hixson")
+            greenville = LocationDataPoints(locations["greenville"]["lat"], locations["greenville"]["long"], OPEN_WEATHER_APP_ID, city="greenville")
+            new_market = LocationDataPoints(locations["new_market"]["lat"], locations["new_market"]["long"], OPEN_WEATHER_APP_ID, city="new_market")
+            columbia = LocationDataPoints(locations["columbia"]["lat"], locations["columbia"]["long"], OPEN_WEATHER_APP_ID, city="columbia")
 
-    locations_list = [dundalk, towanda, santa_maria, lewisburg, hixson, greenville, new_market, columbia]
-
-    for location in locations_list:
-        log_point = f"{location.final_output}\n"
-        file_name = f"{location.file_name}"
-        with open(file_name, "a") as log:
-            log.write(f"{log_point}")
-            log.close()
-    time.sleep(600.0 - ((time.time() - starttime) % 600.0))
+            locations_list = [dundalk, towanda, santa_maria, lewisburg, hixson, greenville, new_market, columbia]
+            for location in locations_list:
+                log_point = f"{location.final_output}\n"
+                file_name = f"{location.file_name}"
+                with open(file_name, "a") as log:
+                    log.write(f"{log_point}")
+                    log.close()
+        except:
+            pass
+        time.sleep(60)

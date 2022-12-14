@@ -47,19 +47,20 @@ def main():
     # https://twython.readthedocs.io/en/latest/usage/starting_out.html
     twitter = Twython(consumer_key, consumer_secret, access_token, access_token_secret)
     lat, long = 39.2649, -76.5324 #Fort Holabird Park
-    starttime = time.time()
     while True:
-        now = datetime.datetime.now()
-        time_string = f'The time is {now.strftime("%H:%M")}. '
-        try:
-            message = time_string + get_weather(lat, long)
-            twitter.update_status(status=message)
-            print(f"{time_string}\tSuccess")
-            time.sleep(1800.0 - ((time.time() - starttime) % 1800.0)) # Half hour delay between posts
-        except TypeError:
-            print(f"{time_string}\tFailure: Type Error")
-        except:
-            print(f"{time_string}\tFailure: Unknown Error")
+        current_time = time.localtime()
+        if current_time.tm_min == 0 or current_time.tm_min == 30:
+            now = datetime.datetime.now()
+            time_string = f'The time is {now.strftime("%H:%M")}. '  # E.g., "The time is 23:00. "
+            try:
+                message = time_string + get_weather(lat, long)
+                twitter.update_status(status=message)
+            except TypeError:
+                print(f"{time_string}\tFailure: Type Error")
+            except:
+                print(f"{time_string}\tFailure: Unknown Error")
+            time.sleep(60)
+        
 
 if __name__ == '__main__':
     main()

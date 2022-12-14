@@ -61,7 +61,7 @@ def get_buoy_conditions(txt_file):
 				message = f'{avail_data["Date"]} {avail_data["Time"]} GMT\n'\
 						  f'Wind speed {avail_data["Wind speed"]} m/s at heading {avail_data["Wind direction"]}; gusts to {avail_data["Gust"]} m/s.\n'\
 						  f'Waves to {avail_data["Wave height"]}m at heading {avail_data["Wave heading"]}.\n'\
-						  f'Dominant wave period {avail_data["Dominant wave period"]}s; average wave period {avail_data["Average wave period"]}s.\n'\
+						  f'Dominant wave period {avail_data["Dominant wave period"]}s; avg wave period {avail_data["Average wave period"]}s.\n'\
 						  f'Atmospheric pressure {avail_data["Sea level pressure"]} hPa.'
 				return message
 		count += 1
@@ -82,7 +82,7 @@ while True:
 	#time_string = "".join([hour, minute])
 	if message:
 		try:
-			print(time_string_pacific, message)
+			#print(time_string_pacific, message)
 			twitter.update_status(status=message)
 		except:
 			pass

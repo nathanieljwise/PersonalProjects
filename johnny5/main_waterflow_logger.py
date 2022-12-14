@@ -14,17 +14,15 @@ sites = [{"name":"towanda", "id":"01532000"},
 		 {"name":"reedy", "id":"02164000"},
 		 {"name":"loyalsock", "id":"01552000"}]
 
-log_header = "date\ttime\tstream flow\tgage height\n"
-
-for i in range(len(sites)):
-	city = sites[i]["name"]
-	file_name = f"{city}_waterflow.txt"
-	with open(file_name, "a") as f:
-		f.write(log_header)
-		f.close()
-		
-starttime = time.time()
-print(f"Started successfully at {starttime}.")
+#log_header = "date\ttime\tstream flow\tgage height\n"
+#for i in range(len(sites)):
+#	city = sites[i]["name"]
+#	file_name = f"{city}_waterflow.txt"
+#	with open(file_name, "a") as f:
+#		f.write(log_header)
+#		f.close()
+current_time = time.localtime()
+print(f"Started successfully at {current_time.tm_hour}:{current_time.tm_min}.")
 while True:
 	for i in range(len(sites)):
 		city = sites[i]["name"]
@@ -32,10 +30,12 @@ while True:
 		id = sites[i]["id"]
 		output = LocationDataPoints(id, city)
 		log_point = f"{output.final_output}\n"
-		with open(file_name, "a") as log:
-			log.write(f"{log_point}")
-			log.close()
-	time.sleep(3600.0 - ((time.time() - starttime) % 3600.0))
+		current_time = time.localtime()
+		if not (current_time.tm_min % 10):
+			with open(file_name, "a") as log:
+				log.write(f"{log_point}")
+				log.close()
+	time.sleep(60)
 
 """
 for site in sites:
