@@ -25,16 +25,19 @@ current_time = time.localtime()
 print(f"Started successfully at {current_time.tm_hour}:{current_time.tm_min}.")
 while True:
 	for i in range(len(sites)):
-		city = sites[i]["name"]
-		file_name = f"{city}_waterflow.txt"
-		id = sites[i]["id"]
-		output = LocationDataPoints(id, city)
-		log_point = f"{output.final_output}\n"
-		current_time = time.localtime()
-		if not (current_time.tm_min % 10):
-			with open(file_name, "a") as log:
-				log.write(f"{log_point}")
-				log.close()
+		try:
+			city = sites[i]["name"]
+			file_name = f"{city}_waterflow.txt"
+			id = sites[i]["id"]
+			output = LocationDataPoints(id, city)
+			log_point = f"{output.final_output}\n"
+			current_time = time.localtime()
+			if not (current_time.tm_min % 10):
+				with open(file_name, "a") as log:
+					log.write(f"{log_point}")
+					log.close()
+		except:
+			pass
 	time.sleep(60)
 
 """
