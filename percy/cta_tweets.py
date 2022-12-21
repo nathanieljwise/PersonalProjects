@@ -6,7 +6,7 @@ https://docs.mapbox.com/api/maps/static-images/
 """
 
 from credentials import TRAIN_TRACKER_KEY
-from cta import  CTAStation, Prediction, getData, printArrivals, stations
+from cta_parse import CTAStation, Prediction, getData, printArrivals, stations
 import requests
 import json
 

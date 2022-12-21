@@ -3,7 +3,7 @@ http://lapi.transitchicago.com/api/1.0/ttarrivals.aspx?key=c88f71976c9d4874a05ea
 https://www.transitchicago.com/station/wils/
 """
 
-from cta import CTAStation, Prediction, getData, printArrivals, stations
+from cta_parse import CTAStation, Prediction, getData, printArrivals, stations
 
 
 def displayStations():
