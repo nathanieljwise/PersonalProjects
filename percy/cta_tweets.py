@@ -10,8 +10,8 @@ from cta_parse import CTAStation, Prediction, getData, printArrivals, stations
 import requests
 import json
 
-st_95th = CTAStation(12)
-data_95th = getData(12)
+chosen_station = 132
+data = getData(chosen_station)
 
 
 base_url = "https://maps.googleapis.com/maps/api/staticmap"
@@ -21,7 +21,7 @@ type = "roadmap"
 counter = 0
 train_markers = {}
 
-for i in data_95th:
+for i in data:
     #print(i["rt"],i["rn"], end=" ")
     if int(i["isApp"]):
         pass
