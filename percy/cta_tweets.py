@@ -10,7 +10,7 @@ from cta_parse import CTAStation, Prediction, getData, printArrivals, stations
 import requests
 import json
 
-chosen_station = 132
+chosen_station = 12
 data = getData(chosen_station)
 
 
@@ -22,18 +22,18 @@ counter = 0
 train_markers = {}
 
 for i in data:
-    #print(i["rt"],i["rn"], end=" ")
+    print(i["rt"],i["rn"], end=" ")
     if int(i["isApp"]):
-        pass
-        #print("is approaching the station.")
+        print("is approaching the station.")
     elif i["lat"]:
-        #print(f' is at {i["lat"]}, {i["lon"]} ')
+        print(f' is at {i["lat"]}, {i["lon"]} ')
 
         lat = float(i["lat"])
         lon = float(i["lon"])
         marker_label = f'{i["rn"]}'
-        #marker = f"{lat},{lon}|label:{marker_label}" # label parameter causes error
-        marker = f"{lat},{lon}"
+        #&markers=color:blue|label:S|40.702147,-74.015794
+        marker = f"color:green|label:counter|{lat},{lon}" # label parameter causes error
+        #marker = f"{lat},{lon}"
 
         query_string = f"center={lat},{lon}&zoom={zoom}&size={size}&maptype={type}&markers={marker}&key={google_key}"
 
@@ -51,8 +51,7 @@ for i in data:
 
         counter += 1
     else:
-        pass
-        #print(" is at an unknown location.")
+        print(" is at an unknown location.")
 
 markers_query = ""
 for i in range(len(train_markers)):
