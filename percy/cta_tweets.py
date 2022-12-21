@@ -16,42 +16,43 @@ data_95th = getData(12)
 
 base_url = "https://maps.googleapis.com/maps/api/staticmap"
 zoom = 16
-size = "500x1000"
+size = "700x700"
 type = "roadmap"
 counter = 0
 train_markers = {}
 
 for i in data_95th:
-    print(i["rt"], end=" ")
-    print(i["rn"], end=" ")
+    #print(i["rt"],i["rn"], end=" ")
     if int(i["isApp"]):
         pass
-        print("is approaching the station.")
+        #print("is approaching the station.")
     elif i["lat"]:
-        print(f' is at {i["lat"]}, {i["lon"]} ')
+        #print(f' is at {i["lat"]}, {i["lon"]} ')
 
         lat = float(i["lat"])
         lon = float(i["lon"])
         marker_label = f'{i["rn"]}'
-        marker = f"{lat},{lon}|label:{marker_label}"
+        #marker = f"{lat},{lon}|label:{marker_label}" # label parameter causes error
+        marker = f"{lat},{lon}"
 
         query_string = f"center={lat},{lon}&zoom={zoom}&size={size}&maptype={type}&markers={marker}&key={google_key}"
 
         response = requests.get(base_url + "?" + query_string)
 
-        #with open(f"map{0+counter}.png", "wb") as f:
-        #    f.write(response.content)
+        with open(f"map{0+counter}.png", "wb") as f:
+            f.write(response.content)
 
         
         train_markers[f'{counter}'] = {}
         train_markers[f'{counter}']["lat"] = float(i["lat"])
         train_markers[f'{counter}']["lon"] = float(i["lon"])
-        train_markers[f'{counter}']["marker_label"] = f'{i["rn"]}'
-        train_markers[f'{counter}']["marker"] = f"{lat},{lon}|label:{marker_label}"
+        #train_markers[f'{counter}']["marker_label"] = f'{i["rn"]}'
+        train_markers[f'{counter}']["marker"] = f"{lat},{lon}" #|label:{marker_label}
 
         counter += 1
     else:
-        print(" is at an unknown location.")
+        pass
+        #print(" is at an unknown location.")
 
 markers_query = ""
 for i in range(len(train_markers)):
@@ -63,5 +64,5 @@ query_string = f"center={41.823815},{-87.630285}&zoom={zoom}&size={size}&maptype
 
 response = requests.get(base_url + "?" + query_string)
 
-with open(f"mapall.png", "wb") as f:
+with open(f"map.png", "wb") as f:
     f.write(response.content)
