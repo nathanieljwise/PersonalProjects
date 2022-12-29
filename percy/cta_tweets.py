@@ -87,7 +87,6 @@ while True:
             photo = open('map.png', 'rb')
             response = twitter.upload_media(media=photo)
             twitter.update_status(status=message, media_ids=[response['media_id']])
-        except:
-            pass
-        print(message)
+        except Exception as e:
+            print(e)
     time.sleep(60)
