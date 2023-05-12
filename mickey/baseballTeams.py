@@ -31,8 +31,8 @@ def main():
 
     teams = getData()
     for i in teams:
-        team = team(i)
-        print(team)
+        thisTeam = team(i)
+        print(thisTeam)
     print()
 
 main()
