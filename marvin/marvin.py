@@ -1,32 +1,23 @@
 import discord
 from random import choice
-from dotenv import load_dotenv
 from discord.ext import commands
 from datetime import datetime
 import os
-from credentials import LOGINS
-from credentials import CHANNELS
+from credentials import LOGINS, CHANNELS, TOKEN
 
-load_dotenv("token.env")
+intents = discord.Intents.default()
+intents.typing = False
+intents.message_content = True
+client = discord.Client(intents=intents)
 
 now = datetime.now()
 dt_string = now.strftime("%Y-%m-%d %H:%M:%S")
 print(f"Bot online at {dt_string}.")
 
-client = discord.Client()
-
-def getLogin(loginCommand):
-    if loginCommand == "apple":
-        for key in LOGINS:
-            if key == "Apple TV":
-                this_login = (f'Username: {LOGINS[f"{key}"]["username"]}\nPassword: {LOGINS[f"{key}"]["password"]}')
-        return this_login
-
 @client.event
 async def on_ready():
     channel = client.get_channel(CHANNELS["SKYNET"])
     await channel.send(f"Marvin logged in at {dt_string}.")
-
 
 @client.event
 async def on_message(message):
@@ -37,7 +28,6 @@ async def on_message(message):
         await message.channel.send(f'Hello, {message.author.mention}!')
         
     if message.content.startswith('!status'):
-        # await message.channel.send(f'Please check status in <#{SKYNET}>')
         await message.channel.send(choice(
             ["I think you ought to know I'm feeling very depressed.",
              "Here I am, brain the size of a planet, and they tell me to take you up to the bridge. Call that job satisfaction? 'Cos I don't.",
@@ -66,43 +56,28 @@ async def on_message(message):
                            "\n\nFramed:\n<https://framed.wtf/>"
                            "\n\nMoviedle:\n<https://www.moviedle.app/>")
 
+    async def send_login_info(channel, message, service):
+        if service in LOGINS:
+            this_login = f'Username: {LOGINS[service]["username"]}\nPassword: {LOGINS[service]["password"]}'
+            await channel.send(f"{message.author.mention}\n{this_login}")
+
     if message.content.startswith("!appletv"):
-        channel = client.get_channel(CHANNELS["SKYNET"])
-        #await channel.send(message.author.mention)
-        this_login = getLogin("apple")
-        await channel.send(this_login)
+        await send_login_info(client.get_channel(CHANNELS["SKYNET"]), message, "Apple TV")
 
     if message.content.startswith("!hbomax"):
-        channel = client.get_channel(CHANNELS["SKYNET"])
-        for key in LOGINS:
-            if key == "HBO Max":
-                this_login = (f'Username: {LOGINS[f"{key}"]["username"]}\nPassword: {LOGINS[f"{key}"]["password"]}')
-        await channel.send(message.author.mention)
-        await channel.send(this_login)
+        await send_login_info(client.get_channel(CHANNELS["SKYNET"]), message, "HBO Max")
 
     if message.content.startswith("!wsj"):
-        channel = client.get_channel(CHANNELS["SKYNET"])
-        for key in LOGINS:
-            if key == "WSJ":
-                this_login = (f'Username: {LOGINS[f"{key}"]["username"]}\nPassword: {LOGINS[f"{key}"]["password"]}')
-        await channel.send(message.author.mention)
-        await channel.send(this_login)
+        await send_login_info(client.get_channel(CHANNELS["SKYNET"]), message, "WSJ")
 
     if message.content.startswith("!peacock"):
+        # await send_login_info(client.get_channel(CHANNELS["SKYNET"]), message, "Peacock")
         channel = client.get_channel(CHANNELS["SKYNET"])
-        for key in LOGINS:
-            if key == "Peacock":
-                this_login = (f'Username: {LOGINS[f"{key}"]["username"]}\nPassword: {LOGINS[f"{key}"]["password"]}')
-        await channel.send(message.author.mention)
-        await channel.send(this_login)
+        await channel.send("There is no current Peacock login available.")
 
     if message.content.startswith("!mlb"):
-        channel = client.get_channel(CHANNELS["SKYNET"])
-        for key in LOGINS:
-            if key == "MLB":
-                this_login = (f'Username: {LOGINS[f"{key}"]["username"]}\nPassword: {LOGINS[f"{key}"]["password"]}')
-        await channel.send(message.author.mention)
-        await channel.send(this_login)
+        await send_login_info(client.get_channel(CHANNELS["SKYNET"]), message, "MLB")
+
 
     if message.content.startswith("!disneyplus"):
         channel = client.get_channel(CHANNELS["SKYNET"])
@@ -122,5 +97,4 @@ async def on_message(message):
                            "\nhttps://github.com/nathanieljwise/PersonalProjects/blob/main/marvin/marvin.py")
 
 
-client.run(os.getenv("TOKEN"))
-my_secret = os.environ["TOKEN"]
+client.run(TOKEN)
