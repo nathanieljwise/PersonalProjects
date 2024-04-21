@@ -35,14 +35,14 @@ class game():
         self.homeWLRecord = f"{self.homeWins}-{self.homeLosses}" # WL record string
         
         self.gameState = jsonObj["status"]["detailedState"] # E.g. Scheduled, PreGame, Warmup, In Progress, Final
+        self.awayScore = 0
+        self.homeScore = 0
+        
         if "score" in jsonObj["teams"]["away"]: # Can be missing key (e.g., game is "Scheduled")
             self.awayScore = jsonObj["teams"]["away"]["score"]
-        else:
-            self.awayScore = 0
         if "score" in jsonObj["teams"]["home"]: # Can be missing key (e.g., game is "Scheduled") 
             self.homeScore = jsonObj["teams"]["home"]["score"]
-        else:
-            self.homeScore = 0
+            
 
     def __str__(self):
         s = f"{self.startTime}\t{self.awayName:22} ({self.awayWLRecord:<5})\tvs\t{self.homeName:22} ({self.homeWLRecord:<5})\t{self.awayScore:<2} to {self.homeScore:<2}\t{self.gameState:10}\t{self.venue:22}"
